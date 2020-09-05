@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             mc:Ignorable="d"
+             x:Class="WordTran.Views.WordOfTheDay"
+             IconImageSource="calendar.jpg">
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="ControlTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <magic:GradientView VerticalOptions="FillAndExpand">
+                                <magic:GradientView.GradientSource>
+                                    <magic:LinearGradient Angle="180">
+                                        <magic:GradientStop Color="#dfc3fb" Offset="0" />
+                                        <magic:GradientStop Color="#2b074b" Offset="1" />
+                                    </magic:LinearGradient>
+                                </magic:GradientView.GradientSource>
+                            </magic:GradientView>
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,10" Spacing="2">
+                <Label Text="WORD OF THE DAY" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="8" TextColor="White"/>
+                <BoxView VerticalOptions="Start" HorizontalOptions="Center" Color="White" HeightRequest="1" WidthRequest="80"/>
+                <Label Text="AUGUST 22, 2020" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="8" TextColor="White"/>
+                <StackLayout>
+                    <Label Text="Parochial" FontSize="40" TextColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="adjective" FontSize="12" TextColor="White" Margin="0, -13, 0, 0" FontAttributes="Italic" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Frame VerticalOptions="StartAndExpand" BackgroundColor="white" Margin="10,20">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Spacing="14">
+                            <Image Aspect="AspectFill" Source="save.png" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="13">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding saveCommand}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image Aspect="AspectFill" Source="speaker.png" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="13">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding saveCommand}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <Label Text="Definition" VerticalOptions="Start" HorizontalOptions="Start" Margin="0, 10, 0, 0" FontSize="15" TextColor="DarkSlateGray"/>
+                        <Label VerticalOptions="Start" HorizontalOptions="Start" Margin="0, 10, 0, 0" FontSize="9" TextColor="Gray">
+                            <Label.FormattedText>
+                                1. relating to a Church parish."the parochial church council"
+
+2. having a limited or narrow outlook or scope.
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Text="Example" VerticalOptions="Start" HorizontalOptions="Start" Margin="0, 10, 0, 0" FontSize="15" TextColor="DarkSlateGray"/>
+                        <Label VerticalOptions="Start" HorizontalOptions="Start" Margin="0, 10, 0, 0" FontSize="9" TextColor="Gray">
+                            <Label.FormattedText>
+                                1. relating to a Church parish."the parochial church council"
+
+2. having a limited or narrow outlook or scope.
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

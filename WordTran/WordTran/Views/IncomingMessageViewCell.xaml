@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WordTran.Views.IncomingMessageViewCell">
+    <ViewCell.View>
+        <Grid Margin="0, 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Grid.ColumnSpan="1" Source="england_flag.png" Aspect="AspectFit"/>
+            <Frame BackgroundColor="Blue" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="FillAndExpand" HasShadow="True">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label Text="djfjhjdfndfbgnfddffgjfgf" TextColor="White" Margin="0,0,0,10"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                        <Label  Text="02/12/20 4:48PM" FontSize="small"  TextColor="White"/>
+                        <Label  Text="/" FontSize="small"  TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

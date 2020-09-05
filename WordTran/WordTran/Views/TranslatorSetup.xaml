@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WordTran.Views.TranslatorSetup"
+             xmlns:usercontrols="clr-namespace:WordTran.CustomControls"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             Title="Translator">
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="ControlTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <magic:GradientView VerticalOptions="FillAndExpand">
+                                <magic:GradientView.GradientSource>
+                                    <magic:LinearGradient Angle="180">
+                                        <magic:GradientStop Color="#dfc3fb" Offset="0" />
+                                        <magic:GradientStop Color="#2b074b" Offset="1" />
+                                    </magic:LinearGradient>
+                                </magic:GradientView.GradientSource>
+                            </magic:GradientView>
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Margin="15"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+
+                <Label Text="Translate from:" HorizontalOptions="Center" TextColor="White"/>
+                <usercontrols:DropMenu
+                    ColorBackground="LightGray"
+                    HeaderText="Select Language"
+                    HeaderTextColor="Gray"
+                    HorizontalOptions="Center"
+                    ItemCheckedCommand="{Binding GenderSelectedCommand}"
+                    ListSource="{Binding GenderList.DropMenuList}"
+                    SingleChoice="True"                    
+                    VerticalOptions="Start" />
+
+                <Label Text="Translate to:" HorizontalOptions="Center" TextColor="White" Margin="0,10,0,0"/>
+
+                <usercontrols:DropMenu
+                    ColorBackground="LightGray"
+                    HeaderText="Select Language"
+                    HeaderTextColor="Gray"
+                    HorizontalOptions="Center"
+                    SingleChoice="True"
+                    ItemCheckedCommand="{Binding LookingforListCommand}"
+                    ListSource="{Binding LookingforList.DropMenuList}"
+                    VerticalOptions="Center" />
+                <Button Text="Connect with your Translator" Margin="0,20,0,0" TextColor="White" FontSize="7" HeightRequest="35" BackgroundColor="#274B07" CornerRadius="13"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
